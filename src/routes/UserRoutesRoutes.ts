@@ -2,15 +2,15 @@ import { UserModel } from '../model/UserTypes'
 import {addUser, getAllUsersService, getUserByIdService} from '../services/UserService'
 import express from 'express'
 
-const userController = express.Router()
+const userControllerr = express.Router()
 
-userController.get('/getAll', async(_req, res) => {
+userControllerr.get('/getAll', async(_req, res) => {
    const allUsers =  await getAllUsersService()
    res.json(allUsers)
 
 })
 
-userController.get('/:id', async (request, response) =>{
+userControllerr.get('/:id', async (request, response) =>{
    let userId = request.params.id
    let userIdNumber = Number.parseInt(userId)
    let userResponse: UserModel = await getUserByIdService(userIdNumber)
@@ -18,7 +18,7 @@ userController.get('/:id', async (request, response) =>{
 })
 
 
-userController.post('/create', async (request, response) =>{
+userControllerr.post('/create', async (request, response) =>{
    const newUser= request.body;
    try {
       const createdUser = await addUser(newUser)
@@ -33,4 +33,4 @@ userController.post('/create', async (request, response) =>{
 })
 
 
-export default userController
+export default userControllerr
