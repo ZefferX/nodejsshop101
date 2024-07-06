@@ -84,7 +84,7 @@ export async function devolutionProcess(request: DevolutionProcessRequest) {
         productPrice: saleTicket.productPrice,
         clientId: user.id,
         clientQuantityRequired: request.quantityToReturn,
-        totalReturned: -totalToReturn
+        totalReturned: totalToReturn
     }
 
     addNewDevolutionTicket(devolutionResponse)
