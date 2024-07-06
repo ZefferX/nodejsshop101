@@ -21,12 +21,6 @@ export interface DiaryEntry {
     comment: string
 }
 
-export interface UserModel {
-    id: number,
-    name: string,
-    age: number,
-    email: string
-}
 
 //Esta linea podria servir en JAVA? con su propio estilo
 // export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'>
