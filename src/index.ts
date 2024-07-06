@@ -1,12 +1,13 @@
 import express from 'express' // estos son ESModules
 
 import diaryRouter from './routes/diaries';
-//import userRoutes from './routes/UserRoutes';
+import userController from './routes/UserRoutes';
 import ticketRoutesController from './routes/TicketRoutes';
 import productController from './routes/ProductRoutes';
 import useCasesRoutesController from './routes/UseCasesRoutes';
 import cashRegisterController from './routes/CashRegisterRoutes';
 import { PORT } from './config';
+
 
 
 const app = express()
@@ -20,7 +21,7 @@ app.get('/ping', (_req, res) =>{
 })
 
 app.use('/api/diaries', diaryRouter)
-//app.use('/api/users', userRoutes)
+app.use('/api/users', userController)
 app.use('/api/tickets', ticketRoutesController)
 app.use('/api/products', productController)
 app.use('/api/useCases', useCasesRoutesController)
