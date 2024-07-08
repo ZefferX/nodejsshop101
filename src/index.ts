@@ -1,4 +1,3 @@
-import cors from 'cors'
 
 import express from 'express' // estos son ESModules
 
@@ -9,7 +8,7 @@ import productController from './routes/ProductRoutes';
 import useCasesRoutesController from './routes/UseCasesRoutes';
 import cashRegisterController from './routes/CashRegisterRoutes';
 import { PORT } from './config';
-
+import cors from 'cors'
 
 
 const app = express()
