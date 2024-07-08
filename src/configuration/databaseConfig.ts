@@ -12,7 +12,13 @@ export const connect = createPool({
     host: DB_HOST,
     user: DB_USER,
     password: DB_PASSWORD,
-    port: parseInt(DB_PORT!),
+    port: defineDataBasePort(DB_PORT),
     database: DB_NAME
 })
+
+function defineDataBasePort(dbport: string | undefined){
+    if (dbport == undefined)
+        return 3306
+    return parseInt(dbport)
+    }
 

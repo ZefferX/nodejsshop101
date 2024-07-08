@@ -1,3 +1,5 @@
+import cors from 'cors'
+
 import express from 'express' // estos son ESModules
 
 import diaryRouter from './routes/diaries';
@@ -11,6 +13,7 @@ import { PORT } from './config';
 
 
 const app = express()
+app.use(cors()); 
 app.use(express.json()) // middleware que transforla la req body a un json
 
 

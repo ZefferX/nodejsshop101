@@ -36,7 +36,7 @@ const isString = (string) => {
     return typeof string == 'string';
 };
 const isDate = (date) => {
-    return typeof date == 'string';
+    return Boolean(Date.parse(date));
 };
 const isVisibility = (param) => {
     return Object.values(types_1.Visibility).includes(param);
